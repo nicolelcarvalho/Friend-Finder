@@ -2,7 +2,7 @@
 
 ### Overview
 
-Created during Week 7 of Rutgers Coding Bootcamp. The challenge was to use Node JS and Express to create a compatibility-based application. I made it a "Trip Finder" theme in which the application takes in results from a user's survey to find out what the user is looking for in their next vacation. The survey is designed using the likert-scale and allows the user to select choices from Strongly Agree to Strongly Disagree. The app then displays the name, picture and destination description of the destination with the best overall match. 
+Created during Week 7 of Rutgers Coding Bootcamp. The challenge was to use Node JS and Express to create a compatibility-based application. I made it a "Trip Finder" theme in which the application takes in results from a user's survey to find out what the user is looking for in their next vacation. The survey is designed using the likert-scale and allows the user to select choices from Strongly Agree to Strongly Disagree. The app then displays the name, picture and trip description of the destination with the best overall match. 
 
 Express was used to handle routing and Node JS was used to create the backend of this application. The application has been deployed to Heroku.
 [Experience Trip Finder.](https://trip-finder-carvalho.herokuapp.com/)
@@ -22,7 +22,9 @@ Express was used to handle routing and Node JS was used to create the backend of
 
 ### How compatibility is calculated 
 
-1. Each user's results is converted into a simple array of numbers (ex: [5, 1, 4, 4, 5, 1, 2, 5, 4, 1]). The value of Strongly Agree is 5 and the value of Strongly Disagree is 1. 
+1. The user's results is converted into a simple array of numbers.
+	* ex: [5, 1, 4, 4, 5, 1, 2, 5, 4, 1, 2, 4]
+	* The value of Strongly Agree is 5 and the value of Strongly Disagree is 1. 
 
 2. Then, we compare the difference between the current user's scores against the scores of the trips objects, question by question for each trip and store it in a scoreDiffArray. Note: absolute values of the differences is used. 
 	* `scoreDiffArray.push(Math.abs(diff))` 
