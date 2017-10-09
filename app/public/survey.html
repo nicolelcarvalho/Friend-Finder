@@ -1,0 +1,212 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+    <title>Friend Finder</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/css/bootstrap-select.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/js/bootstrap-select.min.js"></script>
+</head>
+
+<body class="survey">
+  <div class="container text-left">
+    <div class="row">
+      <div class="col-lg-12">
+        <img id="logo-2" src="/images/trip_finder_logo.png">
+        <hr>
+        <h3 class="text-center survey-header">Find Your Next Vacation</h3>
+
+        <div class="wrap">
+          <form action="">
+            <label class="statement">When I picture my ideal vacation, I see myself exploring a big city.</label>
+            <ul class='likert q1'>
+              <li><input type="radio" name="q1" value="5" required><label>Strongly agree</label></li>
+              <li><input type="radio" name="q1" value="4" required><label>Agree</label></li>
+              <li><input type="radio" name="q1" value="3" required><label>Neutral</label></li>
+              <li><input type="radio" name="q1" value="2" required><label>Disagree</label></li>
+              <li><input type="radio" name="q1" value="1" required><label>Strongly disagree</label></li>
+            </ul>
+            <label class="statement">My ideal vacation is relaxing on the beach.</label>
+            <ul class='likert q2'>
+              <li><input type="radio" name="q2" value="5" required><label>Strongly agree</label></li>
+              <li><input type="radio" name="q2" value="4" required><label>Agree</label></li>
+              <li><input type="radio" name="q2" value="3" required><label>Neutral</label></li>
+              <li><input type="radio" name="q2" value="2" required><label>Disagree</label></li>
+              <li><input type="radio" name="q2" value="1" required><label>Strongly disagree</label></li>
+            </ul>
+            <label class="statement">Places that are family friendly are important to me.</label>
+            <ul class='likert q3'>
+              <li><input type="radio" name="q3" value="5" required><label>Strongly agree</label></li>
+              <li><input type="radio" name="q3" value="4" required><label>Agree</label></li>
+              <li><input type="radio" name="q3" value="3" required><label>Neutral</label></li>
+              <li><input type="radio" name="q3" value="2" required><label>Disagree</label></li>
+              <li><input type="radio" name="q3" value="1" required><label>Strongly disagree</label></li>
+            </ul>
+            <label class="statement">I am looking for a quiet, romantic atmosphere.</label>
+            <ul class='likert q4'>
+              <li><input type="radio" name="q4" value="5" required><label>Strongly agree</label></li>
+              <li><input type="radio" name="q4" value="4" required><label>Agree</label></li>
+              <li><input type="radio" name="q4" value="3" required><label>Neutral</label></li>
+              <li><input type="radio" name="q4" value="2" required><label>Disagree</label></li>
+              <li><input type="radio" name="q4" value="1" required><label>Strongly disagree</label></li>
+            </ul>
+            <label class="statement">I enjoy touring a city's hit attractions.</label>
+            <ul class='likert q5'>
+              <li><input type="radio" name="q5" value="5" required><label>Strongly agree</label></li>
+              <li><input type="radio" name="q5" value="4" required><label>Agree</label></li>
+              <li><input type="radio" name="q5" value="3" required><label>Neutral</label></li>
+              <li><input type="radio" name="q5" value="2" required><label>Disagree</label></li>
+              <li><input type="radio" name="q5" value="1" required><label>Strongly disagree</label></li>
+            </ul>
+            <label class="statement">Sight seeing and learning a city's history is appealing to me.</label>
+            <ul class='likert q6'>
+              <li><input type="radio" name="q6" value="5" required><label>Strongly agree</label></li>
+              <li><input type="radio" name="q6" value="4" required><label>Agree</label></li>
+              <li><input type="radio" name="q6" value="3" required><label>Neutral</label></li>
+              <li><input type="radio" name="q6" value="2" required><label>Disagree</label></li>
+              <li><input type="radio" name="q6" value="1" required><label>Strongly disagree</label></li>
+            </ul>
+            <label class="statement">I'm always up for an adventurous water excursion.</label>
+            <ul class='likert q7'>
+              <li><input type="radio" name="q7" value="5" required><label>Strongly agree</label></li>
+              <li><input type="radio" name="q7" value="4" required><label>Agree</label></li>
+              <li><input type="radio" name="q7" value="3" required><label>Neutral</label></li>
+              <li><input type="radio" name="q7" value="2" required><label>Disagree</label></li>
+              <li><input type="radio" name="q7" value="1" required><label>Strongly disagree</label></li>
+            </ul>
+            <label class="statement">I enjoy hiking cool trails and biking.</label>
+            <ul class='likert q8'>
+              <li><input type="radio" name="q8" value="5" required><label>Strongly agree</label></li>
+              <li><input type="radio" name="q8" value="4" required><label>Agree</label></li>
+              <li><input type="radio" name="q8" value="3" required><label>Neutral</label></li>
+              <li><input type="radio" name="q8" value="2" required><label>Disagree</label></li>
+              <li><input type="radio" name="q8" value="1" required><label>Strongly disagree</label></li>
+            </ul>
+            <label class="statement">Going out to eat, sampling local food and having meals to remember is top on my list.</label>
+            <ul class='likert q9'>
+              <li><input type="radio" name="q9" value="5" required><label>Strongly agree</label></li>
+              <li><input type="radio" name="q9" value="4" required><label>Agree</label></li>
+              <li><input type="radio" name="q9" value="3" required><label>Neutral</label></li>
+              <li><input type="radio" name="q9" value="2" required><label>Disagree</label></li>
+              <li><input type="radio" name="q9" value="1" required><label>Strongly disagree</label></li>
+            </ul>
+            <label class="statement">When it comes to vacation, I like to splurge.</label>
+            <ul class='likert q10'>
+              <li><input type="radio" name="q10" value="5" required><label>Strongly agree</label></li>
+              <li><input type="radio" name="q10" value="4" required><label>Agree</label></li>
+              <li><input type="radio" name="q10" value="3" required><label>Neutral</label></li>
+              <li><input type="radio" name="q10" value="2" required><label>Disagree</label></li>
+              <li><input type="radio" name="q10" value="1" required><label>Strongly disagree</label></li>
+            </ul>
+            <label class="statement">I don't mind traveling far, such as outside the U.S., if it means vacationing in an unforgettable place.</label>
+            <ul class='likert q11'>
+              <li><input type="radio" name="q11" value="5" required><label>Strongly agree</label></li>
+              <li><input type="radio" name="q11" value="4" required><label>Agree</label></li>
+              <li><input type="radio" name="q11" value="3" required><label>Neutral</label></li>
+              <li><input type="radio" name="q11" value="2" required><label>Disagree</label></li>
+              <li><input type="radio" name="q11" value="1" required><label>Strongly disagree</label></li>
+            </ul>
+            <label class="statement">I enjoy hot temperatures when on vacation.</label>
+            <ul class='likert q12'>
+              <li><input type="radio" name="q12" value="5" required><label>Strongly agree</label></li>
+              <li><input type="radio" name="q12" value="4" required><label>Agree</label></li>
+              <li><input type="radio" name="q12" value="3" required><label>Neutral</label></li>
+              <li><input type="radio" name="q12" value="2" required><label>Disagree</label></li>
+              <li><input type="radio" name="q12" value="1" required><label>Strongly disagree</label></li>
+            </ul>
+ 
+            <button type="submit" class="btn btn-lg btn-primary" id="submit" data-toggle="modal">Submit</button>
+            <br>
+            <p class="error-message"></p>
+
+            <!-- Modal -->
+            <div class="modal fade" id="myModal" role="dialog">
+              <div class="modal-dialog">
+              
+                <!-- Modal content-->
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close close-modal" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Trip Match</h4>
+                  </div>
+                  <div class="modal-body">
+                    <p class="trip-image"></p>
+                    <h2 class="trip-name"></h2>
+                    <i><p class="trip-detail"></p></i>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-default close-modal" data-dismiss="modal">Close</button>
+                  </div>
+                </div>
+            
+              </div>
+            </div>
+
+          </form>
+        </div> <!-- End Wrap -->
+
+    <footer class="footer">
+      <div class="container">
+        <span class="links"> <a href="/api/trips">API Destinations Link</a> | <a href="#">GitHub Repo</a></span>
+      </div>
+    </footer>
+
+    </div>
+  </div>
+</div>
+
+
+<script>
+
+  $(".close-modal").on("click", function() {
+    location.reload();
+  });
+
+  $("#submit").on("click", function() {
+    event.preventDefault();
+
+    if ( $("input[name=q1]:checked").val() && $("input[name=q2]:checked").val() && $("input[name=q3]:checked").val() && $("input[name=q4]:checked").val() && $("input[name=q5]:checked").val() && $("input[name=q6]:checked").val() && $("input[name=q7]:checked").val() && $("input[name=q8]:checked").val() && $("input[name=q9]:checked").val() && $("input[name=q10]:checked").val() && $("input[name=q11]:checked").val() && $("input[name=q12]:checked").val() ) {
+
+      var newSurvey = {
+        q1: $("input[name=q1]:checked").val(),
+        q2: $("input[name=q2]:checked").val(),
+        q3: $("input[name=q3]:checked").val(),
+        q4: $("input[name=q4]:checked").val(),
+        q5: $("input[name=q5]:checked").val(),
+        q6: $("input[name=q6]:checked").val(),
+        q7: $("input[name=q7]:checked").val(),
+        q8: $("input[name=q8]:checked").val(),
+        q9: $("input[name=q9]:checked").val(),
+        q10: $("input[name=q10]:checked").val(),
+        q11: $("input[name=q11]:checked").val(),
+        q12: $("input[name=q12]:checked").val()
+      };
+
+        $.post("/api/match", newSurvey)
+          .done(function(data) {
+            console.log(data);
+        });
+
+        $.get("/api/match", function(data) {
+          var match = JSON.parse(data);
+          var tripImage = $("<img src=" + match[0].pic + ">");
+          $(".trip-image").append(tripImage);
+          $(".trip-name").html(match[0].name);
+          $(".trip-detail").html(match[0].description).addClass("trip-description");
+
+          $("#myModal").modal("show");
+        });
+
+    } else {
+      $(".error-message").html("Please answer all questions in the survey.");
+    }
+});
+
+</script>
+    
+</body>
+</html>
