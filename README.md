@@ -37,16 +37,14 @@ Express was used to handle routing and Node JS was used to create the backend of
 
 	 	scoreDiffArray:       [2, 1, 0, 1, 0, 0, 0, 0, 0, 2, 1, 0]
 
-3. We then sum all differences in the scoreDiffArray to calculate the totalDiff of that particular trip. We do this for all trips.
-	* ex: The sum of the above scoreDiffArray is 7. 
-	* `var totalDiff = scoreDiffArray.reduce(getSum);`
+3. We then sum all differences in the scoreDiffArray to calculate the totalDiff of that particular trip. We do this for each trip.
+	* ex: The sum of the above scoreDiffArray is 7: `var totalDiff = scoreDiffArray.reduce(getSum);`
 
 4. We then push this value into an array called totalDiffArray.
 
-5. The smallest number in the totalDiffArray is determined.
-	* `minNumber = Math.min( ...totalDiffArray );` 
+5. The smallest number in the totalDiffArray is determined: `minNumber = Math.min( ...totalDiffArray );` 
 
-6. The smallest number in the totalDiffArray is our trip match. We then find the index of the minNumber in the totalDiffArray to find the data from the trip. The trip match data is then diplayed as a modal pop-up.
+6. The smallest number in the totalDiffArray is our trip match, which has been set to the variable minNumber. We then find the index of minNumber in the totalDiffArray to find the data from the trip. The trip match data is then diplayed as a modal pop-up.
 
 ### Tech used
 - Node.js
