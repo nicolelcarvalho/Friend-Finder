@@ -18,7 +18,7 @@ Express was used to handle routing and Node JS was used to create the backend of
 	* Displays all the possible different trip matches or destinations (reads the array of objects in the trips.js file)
 
 - `/api/match`
-	* Displays the user's trip match (reads the object in the match.js file)
+	* Where the compatability is calculated
 
 ### How compatibility is calculated 
 

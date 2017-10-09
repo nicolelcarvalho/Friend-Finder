@@ -186,17 +186,14 @@
         q12: $("input[name=q12]:checked").val()
       };
 
-        $.post("/api/match", newSurvey)
-          .done(function(data) {
+        $.post("/api/match", newSurvey, function(data) { 
             console.log(data);
-        });
 
-        $.get("/api/match", function(data) {
-          var match = JSON.parse(data);
-          var tripImage = $("<img src=" + match[0].pic + ">");
+          var match = data;
+          var tripImage = $("<img src=" + match.pic + ">");
           $(".trip-image").append(tripImage);
-          $(".trip-name").html(match[0].name);
-          $(".trip-detail").html(match[0].description).addClass("trip-description");
+          $(".trip-name").html(match.name);
+          $(".trip-detail").html(match.description).addClass("trip-description");
 
           $("#myModal").modal("show");
         });

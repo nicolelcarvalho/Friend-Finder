@@ -8,9 +8,7 @@ var fs = require("fs");
 module.exports = function(app) {
 
 	var tripDataArray = [];
-	var matchStringify = [];
-	var totalDiffArray = [];
-	var minNumber;
+
 	// Read the objects array from the trips.js file
 	fs.readFile("./app/data/trips.js", "utf8", function(err, data) {
 
@@ -33,10 +31,7 @@ module.exports = function(app) {
 	app.get("/api/trips", function(req, res) {
 		res.sendFile(path.join(__dirname, "../data/trips.js"));
 	});
-	// Read the match.js file when /api/match path is accessed
-	app.get("/api/match", function(req, res) {
-		res.sendFile(path.join(__dirname, "../data/match.js"));
-	});
+
 
 	// Post the trip match to the /api/match path 
 	app.post("/api/match", function(req, res) {
@@ -44,7 +39,8 @@ module.exports = function(app) {
 		var newSurvey = req.body;
 		var userScore = [];
 		var allTripScores = [];
-		var matchArray = [];
+		var totalDiffArray = [];
+		var minNumber;
 		var count = 0;
 
 		// Push the scores that the user submitted into the userScore array
@@ -125,7 +121,7 @@ module.exports = function(app) {
 		// This smallest number is our trip match
 		minNumber = Math.min( ...totalDiffArray );
 		console.log("Lowest Number: " + minNumber);
-		res.json(newSurvey);
+		// res.json(newSurvey);
 
 		// Loop through the totalDiffArray - we need to figure out which trip had the lowest difference
 		for (var i = 0; i < totalDiffArray.length; i++) {
@@ -143,19 +139,12 @@ module.exports = function(app) {
 				}
 			}
 		}
-
-		matchStringify = JSON.stringify(match);
+		// Stringifying just for console.log purposes
+		var matchStringify = JSON.stringify(match);
 		console.log("Match: " + matchStringify);
-		matchArray.push(match);
-			// Write the trip match to our match.js file
-			fs.writeFile("./app/data/match.js", JSON.stringify(matchArray, null, 2), function(err) {
-				if(err) {
-					console.log(err);
-				}
-			});
+
+		res.json(match);
 
 	});
 
 }
-
-
