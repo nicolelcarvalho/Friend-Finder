@@ -1,9 +1,9 @@
 [
   {
-    "matchScore": 12,
-    "index": 25,
-    "name": "Cayman Islands",
-    "description": "'In the calm, turquoise waters of the Western Caribbean, you’ll find the Cayman Islands – an outstanding getaway for those seeking serenity. This trio of islands is famous for gorgeous, sun-kissed beaches and world-class scuba diving and snorkelling. The largest of the three islands, Grand Cayman is the most developed, affluent and cosmopolitan, known for its breathtakingly beautiful beaches, fine dining, decadent duty-free shopping and an abundance of unique attractions.' - WestJet",
-    "pic": "http://moneyinc.com/wp-content/uploads/2016/12/Cayman-Islands.jpg"
+    "matchScore": 0,
+    "index": 3,
+    "name": "London",
+    "description": "'London is a world unto itself. The eclectic neighborhoods – which house a blend of historic landmarks and modern-day attractions – can keep you occupied for days. Be sure to visit the Tower of London, Buckingham Palace and the British Museum during your stay.' - U.S. News, Travel",
+    "pic": "https://travel.usnews.com/static-travel/images/destinations/82/482151882.jpg"
   }
 ]
