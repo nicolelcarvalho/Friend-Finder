@@ -11,11 +11,11 @@ module.exports = function(app) {
 	var matchStringify = [];
 	var totalDiffArray = [];
 	var minNumber;
-
+	// Read the objects array from the trips.js file
 	fs.readFile("./app/data/trips.js", "utf8", function(err, data) {
 
 		var trips = JSON.parse(data);
-
+		// Loop through the array of objects and store the data into the tripData object
 		for (var i = 0; i < trips.length; i++) {
 				tripData = {
 					name: trips[i].name,
@@ -23,26 +23,32 @@ module.exports = function(app) {
 					pic: trips[i].photo,
 					score: trips[i].scores
 				}
+			// Push each of the tripData objects into tripDataArray
 			tripDataArray.push(tripData);
 		}
 
 		}); // End .readFile
 
-
+	// Read the trips.js file when /api/trips path is accessed
 	app.get("/api/trips", function(req, res) {
 		res.sendFile(path.join(__dirname, "../data/trips.js"));
 	});
-
+	// Read the match.js file when /api/match path is accessed
 	app.get("/api/match", function(req, res) {
 		res.sendFile(path.join(__dirname, "../data/match.js"));
 	});
 
-
+	// Post the trip match to the /api/match path 
 	app.post("/api/match", function(req, res) {
 
 		var newSurvey = req.body;
 		var userScore = [];
+		var allTripScores = [];
+		var scores = [];
+		var count = 0;
+		var matchArray = [];
 
+		// Push the scores that the user submitted into the userScore array
 		userScore.push(parseInt(newSurvey.q1));
 		userScore.push(parseInt(newSurvey.q2));
 		userScore.push(parseInt(newSurvey.q3));
@@ -56,32 +62,23 @@ module.exports = function(app) {
 		userScore.push(parseInt(newSurvey.q11));
 		userScore.push(parseInt(newSurvey.q12));
 
-    	// res.redirect("/app/public/survey"); 
+		// Print the userScore to the console
     	console.log("User Score: " + userScore);
 
-		// Get data for all friends
-		// Loop through the scores of each friend
-		// Subtract the user's score with the friend's score and get a difference
-		// Whichever difference is the least, that friend becomes the match
-
-
-		var allTripScores = [];
-		var scores = [];
-		var count = 0;
-		var matchArray = [];
-
+		// Loop through the tripDataArray (all of our pre-written trip objects) and get each score value
 		for (var i = 0; i < tripDataArray.length; i++) {
-				// Loop through the friendDataArray and push all of the friend's scores into an array
+
 				var tripScores = {
 					tripScore: tripDataArray[i].score
 				};
-
-				// var scores = JSON.stringify(friendScores);
+				// Push all of the trip object scores into an array (allTripScores)
 				allTripScores.push(tripScores);
 			}
 
-			// Loop through each of the friend's scores and loop through each of the user's scores 
-			// Subtract each as we go
+		// In order to compare each of our trip scores with the user's scores, 
+		// We set a count variable so that it continues to compare each trip with the user's score
+		// Every time compareTrips() is run, the count increases, the count is checked, and compareTrips() is called again if the count is less than 33
+		// We are using less than 33 because we currently have 33 trips stored in our trips.js file
 		function checkCount() { 
 			if (count < 33) {
 				compareTrips();
@@ -89,21 +86,24 @@ module.exports = function(app) {
 		}
 		checkCount();
 
+		// compareTrips() compares the user's score with each of the trip scores
 		function compareTrips() { 
 					var scoreDiffArray = [];
+					// We know what trip we are currently comparing because we are setting it's index value as count
 					var currentTrip = allTripScores[count];
 					console.log("Trip Score: " + currentTrip.tripScore);
 
 					var currentTripScore = currentTrip.tripScore;
-
+					// Now we loop through the currentTripScore and compare it with each of the values in userScore
 					for (var i = 0; i < currentTripScore.length; i++) {
-
+						// Loop through each of the values in the userScore
 						for (var i = 0; i < userScore.length; i++) {
+							// Subtract the cuurentTripScore from the userScore
 							var diff = parseInt(userScore[i]) - parseInt(currentTripScore[i]);
-
+							// Push all differences into the scoreDiffArray. Math.abs makes it not a negative number
 							scoreDiffArray.push(Math.abs(diff));
 						}
-
+						// Now, we get the sum of the differences and store it into an array (totalDiffArray)
 						function getSum(total, num) {
 				    	return total + num;
 						}
@@ -112,33 +112,29 @@ module.exports = function(app) {
 
 						totalDiffArray.push(totalDiff);
 
-						// Make an indexCount for number 1 and indexCount for number 2 
-						// Increase indexCount each time the loop goes through
-						firstIndexCount = 0;
-						secondIndexCount = 1;
-
 						count++;
 						console.log("Score Diff Array: " + scoreDiffArray);
 						console.log("Total Diff: " + totalDiff);
+						// Run checkCount again to see if there are more trips to compare with the user's score
 						checkCount();
 					}
-		}
+			}
 
 
 		console.log("Total Differences of All Trips: " + totalDiffArray);
+		// Now, we get the smallest number from the totalDiffArray with Math.min. This pulls the smallest difference out of all of the trip differences. 
+		// This smallest number is our trip match
 		minNumber = Math.min( ...totalDiffArray );
 		console.log("Lowest Number: " + minNumber);
-
-
 		res.json(newSurvey);
 
-
+		// Loop through the totalDiffArray - we need to figure out which trip had the lowest difference
 		for (var i = 0; i < totalDiffArray.length; i++) {
-
+			// If the totalDiffArray is the minNumber
 			if(totalDiffArray[i] === minNumber) {
-
+				// Find the index value of that trip's difference. This tells us the position and so we are able to determine which trip it is. 
 				var index = totalDiffArray.indexOf(totalDiffArray[i]);
-
+				// This trip is then our trip match
 				var match = {
 					matchScore: minNumber,
 					index: index,
@@ -151,8 +147,8 @@ module.exports = function(app) {
 
 		matchStringify = JSON.stringify(match);
 		console.log("Match: " + matchStringify);
-
 		matchArray.push(match);
+			// Write the trip match to our match.js file
 			fs.writeFile("./app/data/match.js", JSON.stringify(matchArray, null, 2), function(err) {
 				if(err) {
 					console.log(err);

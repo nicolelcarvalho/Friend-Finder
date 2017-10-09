@@ -63,7 +63,7 @@ body {
   margin-bottom: 25px;
 }
 
-.links a, .links {
+.links a, .links, .front-page-links a, .front-page-links {
   color: #fff;
   text-decoration: none;
   margin-top: 100px;
@@ -73,11 +73,14 @@ body {
   color:#245588;
 }
 
+.front-page-links a:hover {
+  color: #d3c8e9;
+}
+
 .trip-description {
   line-height: 2;
   font-size: 14px;
 }
-
 
 .survey {
   background: #b9d1ee;
