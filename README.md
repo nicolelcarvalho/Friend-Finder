@@ -27,8 +27,7 @@ Express was used to handle routing and Node JS was used to create the backend of
 	* The value of Strongly Agree is 5 and the value of Strongly Disagree is 1. 
 
 2. Then, we compare the difference between the current user's scores against the scores of each trip, question by question and store it in a scoreDiffArray. The data for each trip has been pre-written in the trips.js file.  
-	* Note: absolute values of the differences is used. 
-	* `scoreDiffArray.push(Math.abs(diff))` 
+	* Note: absolute values of the differences is used: `scoreDiffArray.push(Math.abs(diff))` 
 
 	* Example:
 
@@ -38,7 +37,7 @@ Express was used to handle routing and Node JS was used to create the backend of
 
 	 	scoreDiffArray:       [2, 1, 0, 1, 0, 0, 0, 0, 0, 2, 1, 0]
 
-3. We then sum all differences in the scoreDiffArray to calculate the totalDiff. 
+3. We then sum all differences in the scoreDiffArray to calculate the totalDiff of that particular trip. We do this for all trips.
 	* ex: The sum of the above scoreDiffArray is 7. 
 	* `var totalDiff = scoreDiffArray.reduce(getSum);`
 
