@@ -29,13 +29,13 @@ Express was used to handle routing and Node JS was used to create the backend of
 2. Then, we compare the difference between the current user's scores against the scores of the trips objects, question by question for each trip and store it in a scoreDiffArray. Note: absolute values of the differences is used. 
 	* `scoreDiffArray.push(Math.abs(diff))` 
 
-Example:
+	* Example:
 
-userScore: 		  [5, 1, 4, 4, 5, 1, 2, 5, 4, 1, 2, 4]
+	 userScore: 		  [5, 1, 4, 4, 5, 1, 2, 5, 4, 1, 2, 4]
 
-currentTripScore: [3, 2, 4, 3, 5, 1, 2, 5, 4, 3, 3, 4]
+	 currentTripScore: 	  [3, 2, 4, 3, 5, 1, 2, 5, 4, 3, 3, 4]
 
-scoreDiffArray:   [2, 1, 0, 1, 0, 0, 0, 0, 0, 2, 1, 0]
+	 scoreDiffArray:      [2, 1, 0, 1, 0, 0, 0, 0, 0, 2, 1, 0]
 
 3. We then sum all differences in the scoreDiffArray to calculate the totalDiff. i.e. the sum of the above scoreDiffArray is 7. 
 	* `var totalDiff = scoreDiffArray.reduce(getSum);`
