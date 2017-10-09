@@ -26,7 +26,8 @@ Express was used to handle routing and Node JS was used to create the backend of
 	* ex: [5, 1, 4, 4, 5, 1, 2, 5, 4, 1, 2, 4]
 	* The value of Strongly Agree is 5 and the value of Strongly Disagree is 1. 
 
-2. Then, we compare the difference between the current user's scores against the scores of the trips objects, question by question for each trip and store it in a scoreDiffArray. Note: absolute values of the differences is used. 
+2. Then, we compare the difference between the current user's scores against the scores of each trip, question by question and store it in a scoreDiffArray. The data for each trip has been pre-written in the trips.js file.  
+	* Note: absolute values of the differences is used. 
 	* `scoreDiffArray.push(Math.abs(diff))` 
 
 	* Example:
