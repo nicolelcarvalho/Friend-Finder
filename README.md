@@ -31,13 +31,14 @@ Express was used to handle routing and Node JS was used to create the backend of
 
 	* Example:
 
-	 userScore: 		  [5, 1, 4, 4, 5, 1, 2, 5, 4, 1, 2, 4]
+	 	userScore: 		      [5, 1, 4, 4, 5, 1, 2, 5, 4, 1, 2, 4]
 
-	 currentTripScore: 	  [3, 2, 4, 3, 5, 1, 2, 5, 4, 3, 3, 4]
+	 	currentTripScore: 	  [3, 2, 4, 3, 5, 1, 2, 5, 4, 3, 3, 4]
 
-	 scoreDiffArray:      [2, 1, 0, 1, 0, 0, 0, 0, 0, 2, 1, 0]
+	 	scoreDiffArray:       [2, 1, 0, 1, 0, 0, 0, 0, 0, 2, 1, 0]
 
-3. We then sum all differences in the scoreDiffArray to calculate the totalDiff. i.e. the sum of the above scoreDiffArray is 7. 
+3. We then sum all differences in the scoreDiffArray to calculate the totalDiff. 
+	* ex: The sum of the above scoreDiffArray is 7. 
 	* `var totalDiff = scoreDiffArray.reduce(getSum);`
 
 4. We then push this value into an array called totalDiffArray.
