@@ -44,9 +44,8 @@ module.exports = function(app) {
 		var newSurvey = req.body;
 		var userScore = [];
 		var allTripScores = [];
-		var scores = [];
-		var count = 0;
 		var matchArray = [];
+		var count = 0;
 
 		// Push the scores that the user submitted into the userScore array
 		userScore.push(parseInt(newSurvey.q1));
@@ -63,7 +62,7 @@ module.exports = function(app) {
 		userScore.push(parseInt(newSurvey.q12));
 
 		// Print the userScore to the console
-    	console.log("User Score: " + userScore);
+    console.log("User Score: " + userScore);
 
 		// Loop through the tripDataArray (all of our pre-written trip objects) and get each score value
 		for (var i = 0; i < tripDataArray.length; i++) {
