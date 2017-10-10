@@ -73,6 +73,12 @@ body {
   color:#245588;
 }
 
+.front-page-links {
+  position: absolute;
+  bottom: 3%;
+  left: 5%;
+}
+
 .front-page-links a:hover {
   color: #d3c8e9;
 }
@@ -172,5 +178,63 @@ form .likert li label {width:100%;} {
 } 
 
 
+
+
+
+@media only screen and (max-width: 905px) {
+  #logo {
+    height: 200px;
+    margin-bottom: 40px;
+  }
+
+  .logo-text h2 {
+    font-size: 26px;
+  }
+
+  .logo-text {
+    top: 10%;
+  }
+
+}
+
+
+@media only screen and (max-width: 600px) {
+  #logo {
+    height: 150px;
+    margin-bottom: 40px;
+  }
+
+  .logo-text h2 {
+    font-size: 20px;
+  }
+
+  .logo-text {
+    top: 20%;
+  }
+
+  .go-to-survey {
+    font-size: 16px;
+  }
+}
+
+
+@media only screen and (max-width: 400px) {
+  #logo {
+    height: 120px;
+    margin-bottom: 40px;
+  }
+
+  .logo-text h2 {
+    font-size: 18px;
+  }
+
+  .logo-text {
+    top: 20%;
+  }
+
+  .go-to-survey {
+    font-size: 14px;
+  }
+}
 
 
