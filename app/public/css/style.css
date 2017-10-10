@@ -221,6 +221,10 @@ form .likert li label {width:100%;} {
   .logo-text {
     top: 20%;
   }
+
+  .text-1 {
+    margin-top: 50px;
+  }
   
   .go-to-survey {
     font-size: 24px;
