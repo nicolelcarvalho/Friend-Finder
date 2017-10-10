@@ -222,11 +222,15 @@ form .likert li label {width:100%;} {
   }
 
   .logo-text h2 {
-    font-size: 22px;
+    font-size: 30px;
   }
 
   .logo-text {
     top: 20%;
+  }
+  
+  .go-to-survey {
+    font-size: 24px;
   }
 
 }
