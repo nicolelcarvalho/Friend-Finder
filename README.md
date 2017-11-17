@@ -2,10 +2,23 @@
 
 ### Overview
 
-Created during Week 7 of Rutgers Coding Bootcamp. The challenge was to use Node JS and Express to create a compatibility-based application. I made it a "Trip Finder" theme in which the application takes in results from a user's survey to find out what the user is looking for in their next vacation. The survey is designed using the likert-scale and allows the user to select choices from Strongly Agree to Strongly Disagree. The app then displays the name, picture and trip description of the destination with the best overall match. 
+Created during Week 7 of Rutgers Coding Bootcamp. The challenge was to use Node JS and Express to create a compatibility-based application. I made it a "Trip Finder" theme in which the application takes in results from a user's survey to find out what the user is looking for in their next vacation. The survey is designed using the likert-scale and allows the user to select choices from Strongly Agree to Strongly Disagree. The app then displays the name, picture and trip description of the destination with the best overall match. I also designed the logo in Adobe Illustrator. 
 
 Express was used to handle routing and Node JS was used to create the backend of this application. The application has been deployed to Heroku.
 [Experience Trip Finder.](https://trip-finder-carvalho.herokuapp.com/)
+
+
+### Illustrations
+
+Home screen:
+![reminderdemo](demo/home.png)
+
+Survey:
+![reminderdemo](demo/survey.png)
+
+Calculated trip match:
+![reminderdemo](demo/match.png)
+
 
 ### Different Routes
 - `/`
@@ -56,4 +69,4 @@ Express was used to handle routing and Node JS was used to create the backend of
 
 ### Authors
 
-* **Nicole Carvalho** - *Node, Express* - [Nicole Carvalho](https://github.com/nicolelcarvalho)
+* **Nicole Carvalho** - *Node, Express, Design with Adobe Illustrator* - [Nicole Carvalho](https://github.com/nicolelcarvalho)
