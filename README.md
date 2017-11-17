@@ -11,13 +11,13 @@ Express was used to handle routing and Node JS was used to create the backend of
 ### Illustrations
 
 Home screen:
-![reminderdemo](demo/home.png)
+![home](demo/home.png)
 
 Survey:
-![reminderdemo](demo/survey.png)
+![survey](demo/survey.png)
 
 Calculated trip match:
-![reminderdemo](demo/match.png)
+![match](demo/match.png)
 
 
 ### Different Routes
